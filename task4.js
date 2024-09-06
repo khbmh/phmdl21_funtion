@@ -5,3 +5,10 @@ Write a function called count_zero() which will take a binary string (Binary str
 
 
 */
+
+function count_zero(str = `010001100100`) {
+  return (str.match(/0/g) || []).length; //If the input string contains no '0's, str.match(/0/g) will return null, and trying to access .length on null will result in an error.
+}
+
+let count = count_zero(`111111111`);
+console.log(count);
